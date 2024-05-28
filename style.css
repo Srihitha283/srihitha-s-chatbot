@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.title-container {
+    background-color: #ff6347;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.main-title {
+    margin: 0;
+    padding: 0;
+}
+
+.subtitle {
+    font-size: 1em;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.food {
+    flex: 0 0 60%;
+    background-color: #f8f8f8;
+}
+
+.chatbot-link {
+    flex: 0 0 40%;
+    position: fixed;
+    right: 15px;
+    bottom: 27px;
+    z-index: 1000;
+}
+
+/* Adjusted food-gallery for a 3x3 grid on large screens */
+.food-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.food-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    width: 270px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+.food-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.food-info {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-name {
+    font-size: 18px;
+}
+
+.food-price {
+    font-size: 16px;
+}
+
+/* Add this at the end of your existing CSS */
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .food {
+        flex: 0 0 60%;
+    }
+
+    .chatbot-link {
+        flex: 0 0 40%;
+    }
+
+    .food-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .food,
+    .chatbot-link {
+        flex: 0 0 100%;
+    }
+
+    .food-gallery {
+        grid-template-columns: 1fr;
+        /* 1 column for small screens */
+    }
+
+    .food-item {
+        width: 100%;
+        /* Full width for small screens */
+    }
+}
